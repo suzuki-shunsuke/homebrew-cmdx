@@ -6,13 +6,13 @@ class Cmdx < Formula
   desc "Task runner. It provides useful help messages and supports interactive prompts and validation of arguments
 "
   homepage "https://github.com/suzuki-shunsuke/cmdx"
-  version "1.6.1-0"
+  version "1.6.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/suzuki-shunsuke/cmdx/releases/download/v1.6.1-0/cmdx_darwin_amd64.tar.gz"
-      sha256 "53f3afc5468fd66d92a4981a2ced1709179cf93776c94094502488afd102194a"
+      url "https://github.com/suzuki-shunsuke/cmdx/releases/download/v1.6.1/cmdx_darwin_amd64.tar.gz"
+      sha256 "7f777d9c1e2574294ea0d7c04cabadf3735b91f630f8fb1f74b2c74aec27a521"
 
       def install
         bin.install "cmdx"
@@ -22,8 +22,8 @@ class Cmdx < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/suzuki-shunsuke/cmdx/releases/download/v1.6.1-0/cmdx_linux_amd64.tar.gz"
-      sha256 "5e393258c50db57e71b78717d3604dfb4d77c3476d68d7218c302b9625211592"
+      url "https://github.com/suzuki-shunsuke/cmdx/releases/download/v1.6.1/cmdx_linux_amd64.tar.gz"
+      sha256 "38cf6710909e69c732df8cacac95c53989642736b197f9c40eb71484768f25c8"
 
       def install
         bin.install "cmdx"
