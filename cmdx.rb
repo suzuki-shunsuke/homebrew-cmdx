@@ -6,21 +6,21 @@ class Cmdx < Formula
   desc "Task runner. It provides useful help messages and supports interactive prompts and validation of arguments
 "
   homepage "https://github.com/suzuki-shunsuke/cmdx"
-  version "1.7.4"
+  version "1.7.5"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/suzuki-shunsuke/cmdx/releases/download/v1.7.4/cmdx_darwin_arm64.tar.gz"
-      sha256 "eab029a0abc4b33228853bf9b6cdec1a42284326ad6f6b96bf1caa6cdafea407"
+    if Hardware::CPU.intel?
+      url "https://github.com/suzuki-shunsuke/cmdx/releases/download/v1.7.5/cmdx_darwin_amd64.tar.gz"
+      sha256 "e4d5d9b53b214be7665772d7b338a38b717a5cbdaaaf293986b7fcee4543d1a7"
 
       def install
         bin.install "cmdx"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/suzuki-shunsuke/cmdx/releases/download/v1.7.4/cmdx_darwin_amd64.tar.gz"
-      sha256 "94c2ccfc4330dbf8d587a1127e0cf6babc618506cba0d89bf0975620faf26e60"
+    if Hardware::CPU.arm?
+      url "https://github.com/suzuki-shunsuke/cmdx/releases/download/v1.7.5/cmdx_darwin_arm64.tar.gz"
+      sha256 "5d8ec7cef169c513bafe0d4289e799d5f3473f2631a728b1690542d397d7c4de"
 
       def install
         bin.install "cmdx"
@@ -29,20 +29,24 @@ class Cmdx < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/suzuki-shunsuke/cmdx/releases/download/v1.7.4/cmdx_linux_arm64.tar.gz"
-      sha256 "2fd795e2e91bd60a9b8da4328850b655de7d7e7baf8826ddad4beaf97291ab25"
+    if Hardware::CPU.intel?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/suzuki-shunsuke/cmdx/releases/download/v1.7.5/cmdx_linux_amd64.tar.gz"
+        sha256 "3afd850fca070ded0d4035f88ba36648f13a2eb6c01cf7b4c4bbc3f97f5498dc"
 
-      def install
-        bin.install "cmdx"
+        def install
+          bin.install "cmdx"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/suzuki-shunsuke/cmdx/releases/download/v1.7.4/cmdx_linux_amd64.tar.gz"
-      sha256 "cf6b642829175bdc64df16d04b7faa953b684f4290557ade4bef9b661f3f4452"
+    if Hardware::CPU.arm?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/suzuki-shunsuke/cmdx/releases/download/v1.7.5/cmdx_linux_arm64.tar.gz"
+        sha256 "99ec48cc36a88bbd21da6d4e3d8109fa16619445fee0cc928b8b3824720701a1"
 
-      def install
-        bin.install "cmdx"
+        def install
+          bin.install "cmdx"
+        end
       end
     end
   end
